@@ -24,19 +24,15 @@ const Youtube = () => {
 			<SearchForm />
 			<ul>
 				{searchResults.map((searchResult) => (
-					<Fragment>
-						<li>
-							<img src={searchResult.snippet.thumbnails.default.url} alt="" />
+					<li key={searchResult.id.videoId}>
+						<img src={searchResult.snippet.thumbnails.default.url} alt="" />
 
-							<h3>{searchResult.snippet.title}</h3>
-							<i
-								className="fas fa-play-circle"
-								onClick={() => playMusic(searchResult.id.videoId)}
-							></i>
-						</li>
-
-						{/* <Player videoId={searchResult.id.videoId} /> */}
-					</Fragment>
+						<h3>{searchResult.snippet.title}</h3>
+						<i
+							className="fas fa-play-circle"
+							onClick={() => playMusic(searchResult.id.videoId)}
+						></i>
+					</li>
 				))}
 			</ul>
 			<Modal />
