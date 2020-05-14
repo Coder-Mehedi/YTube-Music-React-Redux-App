@@ -10,11 +10,12 @@ body {
 }
 .title {
 	text-align: center;
-	margin-bottom: 30px;
+	margin: 30px 0px;
 }
 ul {
-	width: 80%;
+	width: 90%;
 	border-radius: 10%;
+	margin: 0 auto;
 }
 li {
 	display: flex;
@@ -23,6 +24,7 @@ li {
 	background: #25262c;
 	min-height: 75px;
 	border-radius: 10% 5% 5% 10%;
+	position: relative;
 }
 img {
 	width: 100px;
@@ -30,6 +32,7 @@ img {
 }
 h3 {
 	margin-left: 15px;
+	max-width: 80%;
 }
 
 form {
@@ -58,5 +61,12 @@ button {
 	border-color: #1a1c21;
 	border-radius: 5%;
 	font-size: 20px;
+	cursor: pointer;
+}
+
+i {
+	position: absolute;
+	right: 20px;
+	font-size: 40px;
 	cursor: pointer;
 }

@@ -17,6 +17,7 @@ const Youtube = () => {
 							<img src={searchResult.snippet.thumbnails.default.url} alt="" />
 
 							<h3>{searchResult.snippet.title}</h3>
+							<i class="fas fa-play-circle"></i>
 						</li>
 
 						{/* <Player videoId={searchResult.id.videoId} /> */}
