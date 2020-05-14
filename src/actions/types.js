@@ -1,1 +1,4 @@
 export const GET_YOUTUBE_SEARCH_RESULT = "SET_SEARCH_RESULT";
+export const GET_LYRICS = "GET_LYRICS";
+export const SET_MODAL_OPEN = "SET_MODAL_OPEN";
+export const SET_MODAL_CLOSE = "SET_MODAL_CLOSE";
