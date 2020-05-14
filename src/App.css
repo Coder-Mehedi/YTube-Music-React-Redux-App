@@ -52,6 +52,11 @@ input {
 	height: 25px;
 	border-bottom: 1px solid white;
 	color: white;
+	font-size: 20px;
+	padding: 5px;
+}
+input:focus {
+	outline: none;
 }
 
 button {
