@@ -1,5 +1,9 @@
 import axios from "axios";
-import { GET_YOUTUBE_SEARCH_RESULT } from "./types";
+import {
+	GET_YOUTUBE_SEARCH_RESULT,
+	SET_MODAL_OPEN,
+	SET_MODAL_CLOSE,
+} from "./types";
 
 export const getYoutubeSearchResultAction = ({ artist, title }) => async (
 	dispatch
@@ -11,4 +15,12 @@ export const getYoutubeSearchResultAction = ({ artist, title }) => async (
 		type: GET_YOUTUBE_SEARCH_RESULT,
 		payload: res.data.items,
 	});
+};
+
+export const setModalOpenAction = (videoId) => {
+	return { type: SET_MODAL_OPEN, payload: videoId };
+};
+
+export const setModalCloseAction = () => {
+	return { type: SET_MODAL_CLOSE };
 };
