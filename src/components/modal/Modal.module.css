@@ -3,7 +3,7 @@
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
 	left: 0;
-	top: 0;
+	bottom: 0%;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
@@ -34,26 +34,43 @@
 .close {
 	color: white;
 	float: right;
-	font-size: 28px;
+	font-size: 32px;
 	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-	color: #000;
+	color: deepskyblue;
 	text-decoration: none;
 	cursor: pointer;
 }
 
 .modalHeader {
 	padding: 2px 16px;
-	background-color: #1a1c22;
 	color: white;
+	display: flex;
+	position: fixed;
+	top: 12px;
+	width: 96%;
+	justify-content: space-between;
 }
 
 .modalBody {
-	padding: 2px 16px;
+	/* padding: 2px 16px; */
+	width: 100%;
+	height: 100%;
+	align-items: center;
 	background: #1a1c22;
+	display: flex;
+}
+.modalBody p {
+	font-size: 18px;
+	max-width: 50%;
+	padding: 10px;
+}
+.noLyrics {
+	width: 50%;
+	text-align: center;
 }
 
 .modalFooter {
