@@ -6,11 +6,13 @@
 	border-radius: 5%;
 	position: relative;
 }
-.details {
+.details h4 {
+	cursor: pointer;
 }
 
 .thumbnail {
 	width: 100%;
+	cursor: pointer;
 }
 
 .cardImage {

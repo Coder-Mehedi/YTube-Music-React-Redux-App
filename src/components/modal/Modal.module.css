@@ -62,6 +62,7 @@
 	align-items: center;
 	background: #1a1c22;
 	display: flex;
+	justify-content: center;
 }
 .modalBody p {
 	font-size: 18px;

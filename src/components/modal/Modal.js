@@ -24,11 +24,7 @@ const Modal = () => {
 				</div>
 				<div className={styles.modalBody}>
 					<Player videoId={videoId} />
-					{lyrics ? (
-						<p>{lyrics}</p>
-					) : (
-						<h2 className="noLyrics">Sorry No Lyrics Found</h2>
-					)}
+					{lyrics && <p>{lyrics}</p>}
 				</div>
 			</div>
 		</div>

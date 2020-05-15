@@ -4,12 +4,11 @@ import Card from "./Card/Card";
 
 const PopularVideos = () => {
 	const popularMusic = useSelector((state) => state.youtube.popularMusic);
-	console.log(popularMusic);
 
 	return (
 		<div className="cardContainer">
 			{popularMusic.map((music) => (
-				<Card music={music} />
+				<Card music={music} key={music.id} />
 			))}
 		</div>
 	);
