@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Player from "./Player";
 import SearchForm from "./SearchForm";
 import {
 	setModalOpenAction,
-	setModalCloseAction,
+	getYoutubePopularMusicAction,
 } from "../actions/youtubeAction";
 import Modal from "./modal/Modal";
 
@@ -14,6 +13,11 @@ const Youtube = () => {
 	const dispatch = useDispatch();
 
 	const setModalOpen = (videoId) => dispatch(setModalOpenAction(videoId));
+
+	const getYoutubePopularMusic = () => dispatch(getYoutubePopularMusicAction());
+	useEffect(() => {
+		getYoutubePopularMusic();
+	}, []);
 
 	const playMusic = (videoId) => {
 		setModalOpen(videoId);
