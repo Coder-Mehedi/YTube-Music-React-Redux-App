@@ -13,6 +13,7 @@
 	-webkit-animation-duration: 0.4s;
 	animation-name: fadeIn;
 	animation-duration: 0.4s;
+	overflow: hidden;
 }
 .open {
 	display: block;
@@ -67,7 +68,10 @@
 .modalBody p {
 	font-size: 18px;
 	max-width: 50%;
-	padding: 10px;
+	padding: 17px;
+	max-height: 100%;
+	overflow-y: scroll;
+	box-sizing: content-box;
 }
 .noLyrics {
 	width: 50%;
