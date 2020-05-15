@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setModalOpenAction } from "../../actions/youtubeAction";
+import { getLyricsAction } from "../../actions/lyricsAction";
 
 const SearchResult = ({
 	searchResult: {
@@ -10,9 +11,15 @@ const SearchResult = ({
 }) => {
 	const dispatch = useDispatch();
 	const setModalOpen = (videoId) => dispatch(setModalOpenAction(videoId));
+	const getLyrics = (searchQuery) => dispatch(getLyricsAction(searchQuery));
+
 	const playMusic = (videoId) => {
 		setModalOpen(videoId);
+		const artist = title.split("-")[0];
+		const splittedTitle = title.split("-")[1];
+		getLyrics({ artist, title: splittedTitle });
 	};
+
 	return (
 		<li key={videoId}>
 			<img

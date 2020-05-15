@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import styles from "./Card.module.css";
 import { setModalOpenAction } from "../../actions/youtubeAction";
+import { getLyricsAction } from "../../actions/lyricsAction";
 
 const Card = ({
 	music: {
@@ -12,15 +13,23 @@ const Card = ({
 }) => {
 	const dispatch = useDispatch();
 	const setModalOpen = (videoId) => dispatch(setModalOpenAction(videoId));
+	const getLyrics = (searchQuery) => dispatch(getLyricsAction(searchQuery));
+
+	const playMusic = (videoId) => {
+		setModalOpen(videoId);
+		const artist = title.split("-")[0];
+		const splittedTitle = title.split("-")[1];
+		getLyrics({ artist, title: splittedTitle });
+	};
 
 	return (
 		<div className={styles.card}>
-			<div className={styles.thumbnail} onClick={() => setModalOpen(id)}>
+			<div className={styles.thumbnail} onClick={() => playMusic(id)}>
 				<img className={styles.cardImage} src={thumbnails.high.url} alt="" />
 			</div>
 
 			<div className={styles.details}>
-				<h4 className={styles.cardVideoTitle} onClick={() => setModalOpen(id)}>
+				<h4 className={styles.cardVideoTitle} onClick={() => playMusic(id)}>
 					{title}
 				</h4>
 				<div className={styles.channelName}>{channelTitle}</div>
