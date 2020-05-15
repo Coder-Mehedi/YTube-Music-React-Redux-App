@@ -4,6 +4,7 @@ import {
 	SET_MODAL_CLOSE,
 	NOT_FOUND,
 	GET_YOUTUBE_POPULAR_MUSIC,
+	CLEAR_SEARCH_RESULT,
 } from "../actions/types";
 
 const initialState = {
@@ -44,6 +45,11 @@ export default (state = initialState, { type, payload }) => {
 				...state,
 				modalOpen: false,
 				currentVideoId: null,
+			};
+		case CLEAR_SEARCH_RESULT:
+			return {
+				...state,
+				searchResults: [],
 			};
 		default:
 			return state;

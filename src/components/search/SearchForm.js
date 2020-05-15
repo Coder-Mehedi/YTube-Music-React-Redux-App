@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getYoutubeSearchResultAction } from "../../actions/youtubeAction";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	getYoutubeSearchResultAction,
+	clearSearchAction,
+} from "../../actions/youtubeAction";
 import { getLyricsAction } from "../../actions/lyricsAction";
 import { useRef } from "react";
 
@@ -15,6 +18,9 @@ const SearchForm = () => {
 		dispatch(getYoutubeSearchResultAction(searchQuery));
 
 	const getLyrics = (searchQuery) => dispatch(getLyricsAction(searchQuery));
+	const clearSearch = () => dispatch(clearSearchAction());
+
+	const searchResults = useSelector((state) => state.youtube.searchResults);
 
 	const handleSearchSubmit = (e) => {
 		e.preventDefault();
@@ -51,6 +57,9 @@ const SearchForm = () => {
 					/>
 				</div>
 				<button type="submit">Search</button>
+				{searchResults.length > 0 && (
+					<button onClick={() => clearSearch()}>Clear Search</button>
+				)}
 			</form>
 		</div>
 	);

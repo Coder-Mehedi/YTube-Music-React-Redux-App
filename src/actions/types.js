@@ -4,3 +4,4 @@ export const GET_LYRICS = "GET_LYRICS";
 export const SET_MODAL_OPEN = "SET_MODAL_OPEN";
 export const SET_MODAL_CLOSE = "SET_MODAL_CLOSE";
 export const NOT_FOUND = "NOT_FOUND";
+export const CLEAR_SEARCH_RESULT = "CLEAR_SEARCH_RESULT";

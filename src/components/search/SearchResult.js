@@ -15,9 +15,16 @@ const SearchResult = ({
 	};
 	return (
 		<li key={videoId}>
-			<img src={thumbnails.default.url} alt="" />
+			<img
+				src={thumbnails.default.url}
+				alt=""
+				className="clickable"
+				onClick={() => playMusic(videoId)}
+			/>
 
-			<h3>{title}</h3>
+			<h3 className="clickable" onClick={() => playMusic(videoId)}>
+				{title}
+			</h3>
 			<i className="fas fa-play-circle" onClick={() => playMusic(videoId)}></i>
 		</li>
 	);

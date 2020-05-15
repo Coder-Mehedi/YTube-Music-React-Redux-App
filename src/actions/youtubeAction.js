@@ -5,6 +5,7 @@ import {
 	SET_MODAL_OPEN,
 	SET_MODAL_CLOSE,
 	NOT_FOUND,
+	CLEAR_SEARCH_RESULT,
 } from "./types";
 
 export const getYoutubeSearchResultAction = ({ artist, title }) => async (
@@ -36,4 +37,8 @@ export const setModalOpenAction = (videoId) => {
 
 export const setModalCloseAction = () => {
 	return { type: SET_MODAL_CLOSE };
+};
+
+export const clearSearchAction = () => {
+	return { type: CLEAR_SEARCH_RESULT };
 };

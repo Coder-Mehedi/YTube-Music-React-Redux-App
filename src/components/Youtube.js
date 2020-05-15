@@ -25,7 +25,7 @@ const Youtube = () => {
 				)}
 				{searchResults.length > 0 &&
 					searchResults.map((searchResult) => (
-						<SearchResult searchResult={searchResult} />
+						<SearchResult key={searchResult.etag} searchResult={searchResult} />
 					))}
 			</ul>
 			<Modal />

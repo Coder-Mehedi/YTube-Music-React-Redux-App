@@ -25,6 +25,7 @@ li {
 	background: #25262c;
 	min-height: 75px;
 	border-radius: 10% 5% 5% 10%;
+	box-shadow: 1px 1px 3px -1px rgba(0, 191, 255, 1);
 	position: relative;
 }
 img {
@@ -98,4 +99,7 @@ i:hover {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+}
+.clickable {
+	cursor: pointer;
 }
