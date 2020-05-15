@@ -43,6 +43,7 @@ const SearchForm = () => {
 					<input
 						type="text"
 						id="title"
+						className="title"
 						onChange={(e) => setTitle(e.target.value)}
 						value={title}
 						placeholder="Enter Song Title"
