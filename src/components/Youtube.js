@@ -9,6 +9,7 @@ import {
 import Modal from "./modal/Modal";
 
 const Youtube = () => {
+	const notFound = useSelector((state) => state.youtube.notFound);
 	const searchResults = useSelector((state) => state.youtube.searchResults);
 	const dispatch = useDispatch();
 
@@ -23,17 +24,23 @@ const Youtube = () => {
 			<h2 className="title">YTube Music</h2>
 			<SearchForm />
 			<ul>
-				{searchResults.map((searchResult) => (
-					<li key={searchResult.id.videoId}>
-						<img src={searchResult.snippet.thumbnails.default.url} alt="" />
+				{notFound && (
+					<h2 className="resultNotFound">
+						Nothing Found, Maybe You Entered Something Wrong!
+					</h2>
+				)}
+				{searchResults.length > 0 &&
+					searchResults.map((searchResult) => (
+						<li key={searchResult.id.videoId}>
+							<img src={searchResult.snippet.thumbnails.default.url} alt="" />
 
-						<h3>{searchResult.snippet.title}</h3>
-						<i
-							className="fas fa-play-circle"
-							onClick={() => playMusic(searchResult.id.videoId)}
-						></i>
-					</li>
-				))}
+							<h3>{searchResult.snippet.title}</h3>
+							<i
+								className="fas fa-play-circle"
+								onClick={() => playMusic(searchResult.id.videoId)}
+							></i>
+						</li>
+					))}
 			</ul>
 			<Modal />
 		</div>
