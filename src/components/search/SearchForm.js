@@ -4,7 +4,6 @@ import {
 	getYoutubeSearchResultAction,
 	clearSearchAction,
 } from "../../actions/youtubeAction";
-import { getLyricsAction } from "../../actions/lyricsAction";
 import { useRef } from "react";
 
 const SearchForm = () => {
@@ -17,7 +16,6 @@ const SearchForm = () => {
 	const getYoutubeSearchResult = (searchQuery) =>
 		dispatch(getYoutubeSearchResultAction(searchQuery));
 
-	const getLyrics = (searchQuery) => dispatch(getLyricsAction(searchQuery));
 	const clearSearch = () => dispatch(clearSearchAction());
 
 	const searchResults = useSelector((state) => state.youtube.searchResults);
@@ -25,7 +23,6 @@ const SearchForm = () => {
 	const handleSearchSubmit = (e) => {
 		e.preventDefault();
 		getYoutubeSearchResult({ artist, title });
-		getLyrics({ artist, title });
 		artistRef.current.blur();
 		titleRef.current.blur();
 	};
