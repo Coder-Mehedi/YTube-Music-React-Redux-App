@@ -3,9 +3,11 @@ import {
 	SET_MODAL_OPEN,
 	SET_MODAL_CLOSE,
 	NOT_FOUND,
+	GET_YOUTUBE_POPULAR_MUSIC,
 } from "../actions/types";
 
 const initialState = {
+	popularMusic: [],
 	searchResults: [],
 	modalOpen: false,
 	currentVideoId: null,
@@ -14,6 +16,11 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
 	switch (type) {
+		case GET_YOUTUBE_POPULAR_MUSIC:
+			return {
+				...state,
+				popularMusic: payload,
+			};
 		case NOT_FOUND:
 			return {
 				...state,
