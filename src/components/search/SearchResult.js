@@ -23,7 +23,7 @@ const SearchResult = ({
 	return (
 		<li key={videoId}>
 			<img
-				src={thumbnails.default.url}
+				src={thumbnails.high.url}
 				alt=""
 				className="clickable"
 				onClick={() => playMusic(videoId)}
