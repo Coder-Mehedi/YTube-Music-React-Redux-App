@@ -17,6 +17,7 @@ const Youtube = () => {
 	const getYoutubePopularMusic = () => dispatch(getYoutubePopularMusicAction());
 	useEffect(() => {
 		getYoutubePopularMusic();
+		// eslint-disable-next-line
 	}, []);
 
 	const playMusic = (videoId) => {

@@ -5,6 +5,7 @@ const Card = ({
 	music: {
 		id,
 		snippet: { channelTitle, thumbnails, title },
+		statistics: { commentCount, likeCount, dislikeCount, viewCount },
 	},
 }) => {
 	return (
@@ -14,13 +15,14 @@ const Card = ({
 			</div>
 
 			<div className={styles.details}>
-				<h4>{title}</h4>
-				<span className={styles.channelName}>{channelTitle}</span>
-				<br />
-				<span className={styles.views}>Views: 381K</span>
-				<div className={styles.likes}>Likes: 432342</div>
-				<div className={styles.dislikes}>Dislikes: 2394</div>
-				<div className={styles.comments}>Comments: 715873</div>
+				<h4 className={styles.cardVideoTitle}>{title}</h4>
+				<div className={styles.channelName}>{channelTitle}</div>
+				<div className={styles.statistics}>
+					<span className={styles.views}>Views: {viewCount}</span>
+					<span className={styles.comments}>Comments: {commentCount}</span>
+					<span className={styles.likes}>Likes: {likeCount}</span>
+					<span className={styles.dislikes}>Dislikes: {dislikeCount}</span>
+				</div>
 			</div>
 		</div>
 	);
