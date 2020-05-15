@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getYoutubeSearchResultAction } from "../actions/youtubeAction";
-import { getLyricsAction } from "../actions/lyricsAction";
+import { getYoutubeSearchResultAction } from "../../actions/youtubeAction";
+import { getLyricsAction } from "../../actions/lyricsAction";
 import { useRef } from "react";
 
 const SearchForm = () => {
