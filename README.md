@@ -6,7 +6,7 @@
 
 # Quick Start ![rocket](https://github.githubassets.com/images/icons/emoji/unicode/1f680.png)
 
-### Install server dependencies
+### Install dependencies
 
     npm install or npm i
 
