@@ -15,7 +15,8 @@ if (process.env.NODE_ENV !== "production") {
 } else {
 	youtubeDataApi = process.env.YOUTUBE_DATA_API;
 }
-
+console.log(process.env);
+console.log(youtubeDataApi);
 export const getYoutubeSearchResultAction = ({ artist, title }) => async (
 	dispatch
 ) => {
