@@ -41,8 +41,26 @@
 	width: 50%;
 	padding: 10px 10px 10px 0px;
 }
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.card {
+		width: 50%;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+	.card {
+		width: 100%;
+		margin: 10px;
+	}
+	.statistics {
+		position: relative;
+	}
+}
 @media (min-width: 320px) and (max-width: 480px) {
 	.card {
 		width: 100%;
+		margin: 10px;
+	}
+	.statistics {
+		position: relative;
 	}
 }

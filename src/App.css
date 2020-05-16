@@ -134,6 +134,43 @@ i:hover {
   */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.title {
+		margin: 20px 0px;
+	}
+
+	form {
+		flex-direction: column;
+	}
+	form {
+		align-items: flex-start;
+	}
+	label {
+		font-size: 18px;
+		min-width: 23%;
+	}
+	.input-group {
+		width: 93%;
+	}
+	input {
+		width: 60%;
+	}
+	input.title {
+		width: 60%;
+	}
+	h3 {
+		font-size: 18px;
+	}
+	li {
+		min-height: 300px;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+	li img {
+		width: 100%;
+	}
+	li i.fas {
+		display: none;
+	}
 }
 
 /* 
@@ -142,6 +179,43 @@ i:hover {
   */
 
 @media (min-width: 481px) and (max-width: 767px) {
+	.title {
+		margin: 20px 0px;
+	}
+	.cardContainer,
+	form {
+		flex-direction: column;
+	}
+	form {
+		align-items: flex-start;
+	}
+	label {
+		font-size: 18px;
+		min-width: 23%;
+	}
+	.input-group {
+		width: 93%;
+	}
+	input {
+		width: 60%;
+	}
+	input.title {
+		width: 60%;
+	}
+	h3 {
+		font-size: 18px;
+	}
+	li {
+		min-height: 300px;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+	li img {
+		width: 100%;
+	}
+	li i.fas {
+		display: none;
+	}
 }
 
 /* 

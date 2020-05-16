@@ -105,6 +105,17 @@
 		opacity: 1;
 	}
 }
+@media (min-width: 481px) and (max-width: 767px) {
+	.modalBody {
+		flex-direction: column;
+	}
+	.modalBody > div {
+		width: 100% !important;
+	}
+	.modalBody p {
+		max-width: 100%;
+	}
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
 	.modalBody {
@@ -112,7 +123,6 @@
 	}
 	.modalBody > div {
 		width: 100% !important;
-		height: 40vh !important;
 	}
 	.modalBody p {
 		max-width: 100%;
