@@ -1,7 +1,5 @@
 import {
 	GET_YOUTUBE_SEARCH_RESULT,
-	SET_MODAL_OPEN,
-	SET_MODAL_CLOSE,
 	NOT_FOUND,
 	GET_YOUTUBE_POPULAR_MUSIC,
 	CLEAR_SEARCH_RESULT,
@@ -10,8 +8,6 @@ import {
 const initialState = {
 	popularMusic: [],
 	searchResults: [],
-	modalOpen: false,
-	currentVideoId: null,
 	notFound: false,
 };
 
@@ -33,18 +29,6 @@ export default (state = initialState, { type, payload }) => {
 				...state,
 				notFound: false,
 				searchResults: payload,
-			};
-		case SET_MODAL_OPEN:
-			return {
-				...state,
-				modalOpen: true,
-				currentVideoId: payload,
-			};
-		case SET_MODAL_CLOSE:
-			return {
-				...state,
-				modalOpen: false,
-				currentVideoId: null,
 			};
 		case CLEAR_SEARCH_RESULT:
 			return {
