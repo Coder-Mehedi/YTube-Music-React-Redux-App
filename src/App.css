@@ -10,7 +10,6 @@ body {
 	font-size: 25px;
 }
 .title {
-	text-align: center;
 	margin: 30px 0px;
 }
 ul {
@@ -23,9 +22,7 @@ li {
 	margin-bottom: 20px;
 	align-items: center;
 	background: #25262c;
-	min-height: 75px;
 	border-radius: 10% 5% 5% 10%;
-	box-shadow: 1px 1px 3px -1px rgba(0, 191, 255, 1);
 	position: relative;
 }
 img {
@@ -104,6 +101,49 @@ i:hover {
 	cursor: pointer;
 }
 
+/* MenuBar */
+.menubar {
+	display: flex;
+}
+.menubar ul {
+	display: flex;
+	justify-content: flex-end;
+	width: 70%;
+}
+.menubar li {
+	justify-content: center;
+	margin: 25px 2px;
+	height: 0px;
+	min-height: 50px;
+}
+.menubar a {
+	text-decoration: none;
+	color: white;
+	padding: 20px;
+}
+.menubar a:hover {
+	color: deepskyblue;
+}
+.menubar .title {
+	margin-left: 3%;
+}
+/* menubar end */
+
+/* Video start */
+.video {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+.video p {
+	font-size: 18px;
+	max-width: 50%;
+	padding: 0px 17px;
+	max-height: 100%;
+	overflow-y: scroll;
+	box-sizing: content-box;
+}
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops

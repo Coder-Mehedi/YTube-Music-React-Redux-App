@@ -1,7 +1,6 @@
 .card {
 	width: 25%;
 	padding: 15px;
-	min-height: 465px;
 	border: 1px solid rgba(255, 127, 80, 0.219);
 	border-radius: 5%;
 	position: relative;
@@ -32,8 +31,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	color: grey;
-	position: absolute;
-	bottom: 0;
 	/* margin-top: 10px; */
 }
 .statistics span {
