@@ -9,6 +9,10 @@
 .details h4 {
 	cursor: pointer;
 }
+.details a {
+	color: white;
+	text-decoration: none;
+}
 
 .thumbnail {
 	width: 100%;
