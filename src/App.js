@@ -1,19 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import "./App.css";
-import Youtube from "./components/Youtube";
-import PopularVideos from "./components/PopularVideos";
-import SearchForm from "./components/search/SearchForm";
+import MenuBar from "./components/Menubar";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Video from "./components/Video";
+import Home from "./components/Home";
 
 function App() {
-	const searchResults = useSelector((state) => state.youtube.searchResults);
-
 	return (
 		<div className="App">
-			<h2 className="title">YTube Music</h2>
-			<SearchForm />
-			<Youtube />
-			{searchResults.length === 0 && <PopularVideos />}
+			<Router>
+				<MenuBar />
+				<Route exact path="/" component={Home} />
+				<Route exact path="/:videoId" component={Video} />
+			</Router>
 		</div>
 	);
 }
