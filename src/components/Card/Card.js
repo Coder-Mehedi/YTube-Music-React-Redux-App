@@ -1,44 +1,45 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import styles from "./Card.module.css";
-import { setModalOpenAction } from "../../actions/youtubeAction";
-import { getLyricsAction } from "../../actions/lyricsAction";
+
+import { Link } from "react-router-dom";
 
 const Card = ({
 	music: {
 		id,
 		snippet: { channelTitle, thumbnails, title },
-		statistics: { commentCount, likeCount, dislikeCount, viewCount },
+		statistics,
 	},
+	searched,
 }) => {
-	const dispatch = useDispatch();
-	const setModalOpen = (videoId) => dispatch(setModalOpenAction(videoId));
-	const getLyrics = (searchQuery) => dispatch(getLyricsAction(searchQuery));
-
-	const playMusic = (videoId) => {
-		setModalOpen(videoId);
-		const artist = title.split("-")[0];
-		const splittedTitle = title.split("-")[1];
-		getLyrics({ artist, title: splittedTitle });
-	};
+	let pathname = searched ? id.videoId : id;
 
 	return (
 		<div className={styles.card}>
-			<div className={styles.thumbnail} onClick={() => playMusic(id)}>
+			<Link className={styles.thumbnail} to={{ pathname, state: { title } }}>
 				<img className={styles.cardImage} src={thumbnails.high.url} alt="" />
-			</div>
+			</Link>
 
 			<div className={styles.details}>
-				<h4 className={styles.cardVideoTitle} onClick={() => playMusic(id)}>
+				<Link
+					className={styles.cardVideoTitle}
+					to={{ pathname, state: { title } }}
+				>
 					{title}
-				</h4>
+				</Link>
 				<div className={styles.channelName}>{channelTitle}</div>
-				<div className={styles.statistics}>
-					<span className={styles.views}>Views: {viewCount}</span>
-					<span className={styles.comments}>Comments: {commentCount}</span>
-					<span className={styles.likes}>Likes: {likeCount}</span>
-					<span className={styles.dislikes}>Dislikes: {dislikeCount}</span>
-				</div>
+
+				{statistics && (
+					<div className={styles.statistics}>
+						<span className={styles.views}>Views: {statistics.viewCount}</span>
+						<span className={styles.comments}>
+							Comments: {statistics.commentCount}
+						</span>
+						<span className={styles.likes}>Likes: {statistics.likeCount}</span>
+						<span className={styles.dislikes}>
+							Dislikes: {statistics.dislikeCount}
+						</span>
+					</div>
+				)}
 			</div>
 		</div>
 	);
