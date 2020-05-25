@@ -11,7 +11,7 @@ import Register from "./components/auth/Register";
 import AuthRoute from "./utils/AuthRoute";
 
 const client = new ApolloClient({
-	uri: "http://localhost:4000",
+	uri: "https://ytube-server.herokuapp.com",
 });
 
 function App() {
