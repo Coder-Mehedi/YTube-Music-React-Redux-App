@@ -9,11 +9,20 @@ const Menubar = () => {
 	const logout = () => dispatch(logoutAction());
 
 	const menuBar = user ? (
-		<li>
-			<button className="logout-btn" onClick={logout}>
-				Logout
-			</button>
-		</li>
+		<>
+			<li>
+				<button className="logout-btn" onClick={logout}>
+					Logout
+				</button>
+			</li>
+			<li className="dropdown">
+				<span>Hello Mehedi</span>
+				<div class="dropdown-content">
+					<li>Liked Videos</li>
+					<li>Watch History</li>
+				</div>
+			</li>
+		</>
 	) : (
 		<>
 			<li>

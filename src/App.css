@@ -196,6 +196,33 @@ i:hover {
 .logout-btn:focus {
 	outline: none;
 }
+
+/* dropdown style start */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown span {
+	padding: 10px;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+.dropdown-content li {
+	margin: 5px 0px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+/* dropdown style end */
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
