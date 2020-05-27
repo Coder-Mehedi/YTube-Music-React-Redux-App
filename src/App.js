@@ -3,6 +3,8 @@ import "./App.css";
 import MenuBar from "./components/Menubar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
+import { createHttpLink } from "apollo-link-http";
+import { setContext } from "apollo-link-context";
 import ApolloClient from "apollo-boost";
 import Video from "./components/Video";
 import Home from "./components/Home";
@@ -10,8 +12,17 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import AuthRoute from "./utils/AuthRoute";
 
+// context setup ref: https://www.apollographql.com/docs/react/networking/authentication/
 const client = new ApolloClient({
 	uri: "https://ytube-server.herokuapp.com",
+	request: (operation) => {
+		const token = localStorage.getItem("jwtToken");
+		operation.setContext({
+			headers: {
+				Authorization: token ? `Bearer ${token}` : "",
+			},
+		});
+	},
 });
 
 function App() {
