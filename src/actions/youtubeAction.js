@@ -2,8 +2,6 @@ import axios from "axios";
 import {
 	GET_YOUTUBE_POPULAR_MUSIC,
 	GET_YOUTUBE_SEARCH_RESULT,
-	SET_MODAL_OPEN,
-	SET_MODAL_CLOSE,
 	NOT_FOUND,
 	CLEAR_SEARCH_RESULT,
 } from "./types";
@@ -30,14 +28,6 @@ export const getYoutubePopularMusicAction = () => async (dispatch) => {
 		type: GET_YOUTUBE_POPULAR_MUSIC,
 		payload: res.data.items,
 	});
-};
-
-export const setModalOpenAction = (videoId) => {
-	return { type: SET_MODAL_OPEN, payload: videoId };
-};
-
-export const setModalCloseAction = () => {
-	return { type: SET_MODAL_CLOSE };
 };
 
 export const clearSearchAction = () => {
