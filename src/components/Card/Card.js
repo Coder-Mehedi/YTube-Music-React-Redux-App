@@ -15,14 +15,17 @@ const Card = ({
 
 	return (
 		<div className={styles.card}>
-			<Link className={styles.thumbnail} to={{ pathname, state: { title } }}>
+			<Link
+				className={styles.thumbnail}
+				to={{ pathname, state: { title, thumbnail: thumbnails.high.url } }}
+			>
 				<img className={styles.cardImage} src={thumbnails.high.url} alt="" />
 			</Link>
 
 			<div className={styles.details}>
 				<Link
 					className={styles.cardVideoTitle}
-					to={{ pathname, state: { title } }}
+					to={{ pathname, state: { title, thumbnail: thumbnails.high.url } }}
 				>
 					{title}
 				</Link>
