@@ -3,29 +3,24 @@ import styles from "./Card.module.css";
 
 import { Link } from "react-router-dom";
 
-const Card = ({
-	music: {
-		id,
-		snippet: { channelTitle, thumbnails, title },
-		statistics,
-	},
-	searched,
-}) => {
-	let pathname = searched ? id.videoId : id;
+const CustomCard = ({ music: { videoId, title, thumbnail } }) => {
+	let pathname = `/${videoId}`;
+	let channelTitle = "";
+	let statistics = "";
 
 	return (
 		<div className={styles.card}>
 			<Link
 				className={styles.thumbnail}
-				to={{ pathname, state: { title, thumbnail: thumbnails.high.url } }}
+				to={{ pathname, state: { title, thumbnail } }}
 			>
-				<img className={styles.cardImage} src={thumbnails.high.url} alt="" />
+				<img className={styles.cardImage} src={thumbnail} alt="" />
 			</Link>
 
 			<div className={styles.details}>
 				<Link
 					className={styles.cardVideoTitle}
-					to={{ pathname, state: { title, thumbnail: thumbnails.high.url } }}
+					to={{ pathname, state: { title, thumbnail } }}
 				>
 					{title}
 				</Link>
@@ -48,4 +43,4 @@ const Card = ({
 	);
 };
 
-export default Card;
+export default CustomCard;

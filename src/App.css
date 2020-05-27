@@ -12,6 +12,9 @@ body {
 .title {
 	margin: 30px 0px;
 }
+.text-center {
+	text-align: center;
+}
 ul {
 	width: 90%;
 	border-radius: 10%;
@@ -212,15 +215,22 @@ i:hover {
 	position: absolute;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	background: #1a1c22;
 	z-index: 1;
 }
 .dropdown-content li {
 	margin: 5px 0px;
+	font-size: 18px;
 }
 
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
+ul.dropdown-content {
+	display: none;
+}
+
 /* dropdown style end */
 
 /* 

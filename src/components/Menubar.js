@@ -16,11 +16,15 @@ const Menubar = () => {
 				</button>
 			</li>
 			<li className="dropdown">
-				<span>Hello Mehedi</span>
-				<div class="dropdown-content">
-					<li>Liked Videos</li>
-					<li>Watch History</li>
-				</div>
+				<span>Hello {user.username}</span>
+				<ul className="dropdown-content">
+					<li>
+						<Link to="/user/liked">Liked Videos</Link>
+					</li>
+					<li>
+						<Link to="/user/watched">Watch History</Link>
+					</li>
+				</ul>
 			</li>
 		</>
 	) : (

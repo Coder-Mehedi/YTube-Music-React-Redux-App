@@ -9,6 +9,8 @@ import Home from "./components/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import AuthRoute from "./utils/AuthRoute";
+import Watched from "./components/Watched";
+import Liked from "./components/Liked";
 
 // context setup ref: https://www.apollographql.com/docs/react/networking/authentication/
 const client = new ApolloClient({
@@ -33,7 +35,9 @@ function App() {
 						<Route exact path="/" component={Home} />
 						<AuthRoute path="/login" component={Login} />
 						<AuthRoute path="/register" component={Register} />
-						<Route path="/:videoId" component={Video} />
+						<Route exact path="/:videoId" component={Video} />
+						<Route path="/user/liked" component={Liked} />
+						<Route path="/user/watched" component={Watched} />
 					</Switch>
 				</Router>
 			</div>
