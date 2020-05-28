@@ -4,6 +4,7 @@ import {
 	GET_YOUTUBE_SEARCH_RESULT,
 	NOT_FOUND,
 	CLEAR_SEARCH_RESULT,
+	SET_WATCHED_VIDEOS,
 } from "./types";
 
 const API_KEY = "AIzaSyD3kwwIJVOaEdie8g_PJs5-dxl-OGZe-80";
@@ -28,6 +29,10 @@ export const getYoutubePopularMusicAction = () => async (dispatch) => {
 		type: GET_YOUTUBE_POPULAR_MUSIC,
 		payload: res.data.items,
 	});
+};
+
+export const setWatchedVideosAction = (payload) => async (dispatch) => {
+	dispatch({ type: SET_WATCHED_VIDEOS, payload });
 };
 
 export const clearSearchAction = () => {

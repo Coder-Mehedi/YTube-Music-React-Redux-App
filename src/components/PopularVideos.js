@@ -4,14 +4,14 @@ import Card from "./Card/Card";
 import { getYoutubePopularMusicAction } from "../actions/youtubeAction";
 
 const PopularVideos = () => {
+	const popularMusic = useSelector((state) => state.youtube.popularMusic);
+
 	const dispatch = useDispatch();
 	const getYoutubePopularMusic = () => dispatch(getYoutubePopularMusicAction());
 	useEffect(() => {
-		getYoutubePopularMusic();
+		popularMusic.length === 0 && getYoutubePopularMusic();
 		// eslint-disable-next-line
 	}, []);
-
-	const popularMusic = useSelector((state) => state.youtube.popularMusic);
 
 	return (
 		<div className="cardContainer">

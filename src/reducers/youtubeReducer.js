@@ -3,11 +3,14 @@ import {
 	NOT_FOUND,
 	GET_YOUTUBE_POPULAR_MUSIC,
 	CLEAR_SEARCH_RESULT,
+	SET_WATCHED_VIDEOS,
 } from "../actions/types";
 
 const initialState = {
 	popularMusic: [],
 	searchResults: [],
+	watched: [],
+	liked: [],
 	notFound: false,
 };
 
@@ -34,6 +37,11 @@ export default (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				searchResults: [],
+			};
+		case SET_WATCHED_VIDEOS:
+			return {
+				...state,
+				watched: payload,
 			};
 		default:
 			return state;
