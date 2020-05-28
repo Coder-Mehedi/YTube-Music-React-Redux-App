@@ -15,9 +15,7 @@ const SearchResult = ({
 
 	const playMusic = (videoId) => {
 		setModalOpen(videoId);
-		const artist = title.split("-")[0];
-		const splittedTitle = title.split("-")[1];
-		getLyrics({ artist, title: splittedTitle });
+		getLyrics(title);
 	};
 
 	return (
