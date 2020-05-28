@@ -21,7 +21,7 @@
 - [YouTube Data API](https://developers.google.com/youtube/v3/docs)
 - [Lyrics API](https://lyricsovh.docs.apiary.io)
 
-## What else I can do in this project?
+## What else I can possibly add in this project?
 
 - Add a back-end
 - Add user auth system
