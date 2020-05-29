@@ -4,10 +4,12 @@ import {
 	GET_YOUTUBE_POPULAR_MUSIC,
 	CLEAR_SEARCH_RESULT,
 	SET_WATCHED_VIDEOS,
+	ADD_MORE_JOKES,
 } from "../actions/types";
 
 const initialState = {
 	popularMusic: [],
+	popularMusicToShow: [],
 	searchResults: [],
 	watched: [],
 	liked: [],
@@ -20,6 +22,15 @@ export default (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				popularMusic: payload,
+				popularMusicToShow: payload.slice(0, 12),
+			};
+		case ADD_MORE_JOKES:
+			return {
+				...state,
+				popularMusicToShow: state.popularMusic.slice(
+					0,
+					state.popularMusicToShow.length + 12
+				),
 			};
 		case NOT_FOUND:
 			return {

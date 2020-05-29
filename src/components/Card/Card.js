@@ -10,11 +10,12 @@ const Card = ({
 		statistics,
 	},
 	searched,
+	index,
 }) => {
 	let pathname = searched ? id.videoId : id;
 
 	return (
-		<div className={styles.card}>
+		<div className={styles.card} id={`video-${index}`}>
 			<Link
 				className={styles.thumbnail}
 				to={{ pathname, state: { title, thumbnail: thumbnails.high.url } }}

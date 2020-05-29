@@ -12,13 +12,13 @@ const Register = () => {
 		password: "",
 		confirmPassword: "",
 	});
-	const [errors, setErrors] = useState(null);
+	const [errors, setErrors] = useState({});
 
 	const { username, email, password, confirmPassword } = user;
 
 	const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
-	const [registerUser, { loading }] = useMutation(REGISTER_USER, {
+	const [registerUser] = useMutation(REGISTER_USER, {
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors);
 		},
@@ -51,6 +51,9 @@ const Register = () => {
 						value={username}
 						onChange={onChange}
 					/>
+					<span className="register-error">
+						{errors.username && errors.username}
+					</span>
 				</div>
 
 				<div className="form-group">
@@ -62,6 +65,7 @@ const Register = () => {
 						value={email}
 						onChange={onChange}
 					/>
+					<span className="register-error">{errors.email && errors.email}</span>
 				</div>
 
 				<div className="form-group">
@@ -73,6 +77,9 @@ const Register = () => {
 						value={password}
 						onChange={onChange}
 					/>
+					<span className="register-error">
+						{errors.password && errors.password}
+					</span>
 				</div>
 
 				<div className="form-group">
@@ -84,10 +91,14 @@ const Register = () => {
 						value={confirmPassword}
 						onChange={onChange}
 					/>
+					<span className="register-error">
+						{errors.confirmPassword && errors.confirmPassword}
+					</span>
 				</div>
 
 				<button type="submit">Register</button>
 			</form>
+			{errors && console.log(errors)}
 		</div>
 	);
 };

@@ -19,7 +19,7 @@ const Login = () => {
 
 	const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
-	const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+	const [loginUser] = useMutation(LOGIN_USER, {
 		onError(err) {
 			// setErrors(err.graphQLErrors[0].extensions.exception.errors);
 			console.log(err.graphQLErrors[0].message);

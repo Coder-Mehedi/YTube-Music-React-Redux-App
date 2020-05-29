@@ -5,3 +5,4 @@ export const CLEAR_LYRICS = "CLEAR_LYRICS";
 export const NOT_FOUND = "NOT_FOUND";
 export const CLEAR_SEARCH_RESULT = "CLEAR_SEARCH_RESULT";
 export const SET_WATCHED_VIDEOS = "SET_WATCHED_VIDEOS";
+export const ADD_MORE_JOKES = "ADD_MORE_JOKES";
